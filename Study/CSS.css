@@ -1,0 +1,12 @@
+h1, h3 {
+    font-size: 1en;
+    color: blue;
+}
+
+h2 {
+    color: green;
+}
+
+p {
+    margin-left: 10px;
+}
