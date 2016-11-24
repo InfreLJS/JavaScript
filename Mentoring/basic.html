@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        <!-- canvas {
+            border: 3px solid blue;
+        }
+
+        //-->
+    </style>
+    <script type="text/javascript">
+        var Rect = function(C, x, y, width, height, angle, scale) {
+            // var self = {
+            //     x: x,
+            //     y: y,
+            //     width: width,
+            //     height: height
+            // };
+            var self = {};
+            self.color = C;
+            self.x = x;
+            self.y = y;
+            self.width = width;
+            self.height = height;
+            self.angle = angle;
+            self.scale = scale;
+
+            self.draw = function(context) {
+                context.save();
+                context.fillStyle = self.color;
+                context.translate(self.x + self.width / 2, self.y + self.height / 2);
+                context.rotate(self.angle * Math.PI / 180);
+                context.scale(self.scale, self.scale);
+                context.fillRect(-self.width / 2, -self.height / 2, self.width, self.height);
+                context.restore();
+            }
+
+            return self;
+        };
+
+        var canvas;
+        var context;
+        window.addEventListener("load", init, false);
+
+        function init() {
+            canvas = document.getElementById("Screen");
+            context = canvas.getContext("2d");
+
+            var rectangles = [];
+            for (var i = 0; i < 10; i++) {
+                rectangles.push(Rect("rgba(" + i * 10 + ",100,100,1)", 100 + i * 50, 100 + i * 50, 100 + i * 50, 100 + i * 50, 45 + i * 10, 1.5));
+            }
+            for (var i = 0; i < rectangles.length; i++) {
+                rectangles[i].draw(context);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="Screen" width="1000" height="800"></canvas>
+</body>
+
+</html>
