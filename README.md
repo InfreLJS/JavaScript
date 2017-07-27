@@ -1,4 +1,4 @@
-# JavaScript
+# Study_JavaScript
 
 Javascript 언어를 공부하기 위해 여러가지 테스트를 해 본 흔적들이다.
 
